@@ -12,4 +12,6 @@ public interface EmploymentAgreementService {
     void deleteAgreement(Long id);
     List<EmploymentAgreement> getAllAgreements();
     List<EmploymentAgreement> findAgreementsByRole(String role); // Example of custom method
+    List<EmploymentAgreement> searchAgreements(String role, Double salaryMin, Double salaryMax);
 }
+

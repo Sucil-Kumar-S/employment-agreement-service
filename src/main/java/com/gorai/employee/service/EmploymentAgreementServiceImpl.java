@@ -50,4 +50,17 @@ public class EmploymentAgreementServiceImpl implements EmploymentAgreementServic
     public List<EmploymentAgreement> findAgreementsByRole(String role) {
         return repository.findByRole(role); // Fetch agreements by role
     }
+
+    @Override
+    public List<EmploymentAgreement> searchAgreements(String role, Double salaryMin, Double salaryMax) {
+        if (role != null && salaryMin != null && salaryMax != null) {
+            return repository.findByRoleAndSalaryBetween(role, salaryMin, salaryMax);
+        } else if (role != null) {
+            return repository.findByRole(role);
+        } else if (salaryMin != null && salaryMax != null) {
+            return repository.findBySalaryBetween(salaryMin, salaryMax);
+        } else {
+            return repository.findAll();
+        }
+    }
 }

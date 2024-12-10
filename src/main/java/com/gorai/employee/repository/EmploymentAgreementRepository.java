@@ -15,5 +15,10 @@ public interface EmploymentAgreementRepository extends JpaRepository<EmploymentA
 
     // Example: Find all agreements with salary greater than a specific value
     List<EmploymentAgreement> findBySalaryGreaterThan(Double salary);
+
+    List<EmploymentAgreement> findBySalaryBetween(Double salaryMin, Double salaryMax);
+
+    // Find agreements by role and within a salary range
+    List<EmploymentAgreement> findByRoleAndSalaryBetween(String role, Double salaryMin, Double salaryMax);
 }
 

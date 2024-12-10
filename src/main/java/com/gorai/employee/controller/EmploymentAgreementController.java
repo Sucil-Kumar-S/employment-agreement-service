@@ -48,4 +48,12 @@ public class EmploymentAgreementController {
     public ResponseEntity<List<EmploymentAgreement>> getAgreementsByRole(@PathVariable String role) {
         return ResponseEntity.ok(service.findAgreementsByRole(role));
     }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<EmploymentAgreement>> searchAgreements(
+        @RequestParam(required = false) String role,
+        @RequestParam(required = false) Double salaryMin,
+        @RequestParam(required = false) Double salaryMax) {
+        return ResponseEntity.ok(service.searchAgreements(role, salaryMin, salaryMax));
+    }
 }
