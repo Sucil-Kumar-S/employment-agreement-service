@@ -30,4 +30,4 @@ cd employement-agreement-service
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE.txt) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/Sucil-Kumar-S/employment-agreement-service/blob/main/License.txt) file for details.
